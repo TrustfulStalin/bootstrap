@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Exotic Foods</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="Homie.HTML">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.HTML">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+            </div> 
+        </nav>
+
+        <h1 class="text-center">Home page</h1>
+    </head>
+    <body>
+        <div class="container mt-5 pt-5">
+            <h2 class="text-center text-primary">Food Tester</h2>
+            <form class="border p-4 shadow-sm bg-light" id="foodTesterForm">
+                <input type="text" class="form-control mb-3" id="fullName" placeholder="Full Name">
+                <input type="email" class="form-control mb-3" id="email" placeholder="Email">
+                <input type="password" class="form-control mb-3" id="password" placeholder="Password">
+                <button type="button" class="btn btn-primary w-100" onclick="captureFormData()">Register</button>
+            </form>
+        </div>
+
+        <div class="container mt-5">
+            <h2 class="text-center text-primary mb-4">Strange Food for Strange People</h2>
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Food Item</th>
+                        <th>Price</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dragon Fruit</td>
+                        <td>$5.99</td>
+                        <td>Vietnam</td>
+                    </tr>
+                    <tr>
+                        <td>Durian</td>
+                        <td>$10.00</td>
+                        <td>Thailand</td>
+                    </tr>
+                    <tr>
+                        <td>Mangoes (Alphonso)</td>
+                        <td>$6.50</td>
+                        <td>India</td>
+                    </tr>
+                    <tr>
+                        <td>Rambutan</td>
+                        <td>$4.99</td>
+                        <td>Malaysia</td>
+                    </tr>
+                    <tr>
+                        <td>Jackfruit</td>
+                        <td>$3.75</td>
+                        <td>India</td>
+                    </tr>
+                    <tr>
+                        <td>Longan</td>
+                        <td>$7.25</td>
+                        <td>Thailand</td>
+                    </tr>
+                    <tr>
+                        <td>Salak (Snake Fruit)</td>
+                        <td>$8.00</td>
+                        <td>Indonesia</td>
+                    </tr>
+                    <tr>
+                        <td>Passion Fruit</td>
+                        <td>$3.50</td>
+                        <td>Australia</td>
+                    </tr>
+                    <tr>
+                        <td>Lychee</td>
+                        <td>$9.00</td>
+                        <td>China</td>
+                    </tr>
+                    <tr>
+                        <td>Pitaya (Yellow)</td>
+                        <td>$12.00</td>
+                        <td>Mexico</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Display Captured Information -->
+        <div class="container mt-5" id="userInfo" style="display:none;">
+            <h2 class="text-center text-primary">Captured Information</h2>
+            <div class="border p-4 bg-light">
+                <p><strong>Full Name:</strong> <span id="displayName"></span></p>
+                <p><strong>Email:</strong> <span id="displayEmail"></span></p>
+            </div>
+        </div>
+
+        <!-- Bootstrap JS and Popper.js -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybD0K6kPjzS6taQp4aB1XB6mjzbsRzFIPtL9XYLx4z7cR6J5f" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0t4m0Q06fF5e5tWw4OLV40p6bq8Fq4c+0b7xV4f1wWj6vfo7" crossorigin="anonymous"></script>
+
+        <!-- JavaScript to Capture Form Data -->
+        <script>
+            function captureFormData() {
+                // Get input values
+                var fullName = document.getElementById('fullName').value;
+                var email = document.getElementById('email').value;
+                var password = document.getElementById('password').value;
+
+                console.log(fullName);
+                console.log(email);
+                console.log(password);
+
+                // Display captured information
+                if (fullName && email && password) {
+                    // Update displayed information
+                    document.getElementById('displayName').innerText = fullName;
+                    document.getElementById('displayEmail').innerText = email;
+
+                    // Show the captured info section
+                    document.getElementById('userInfo').style.display = 'block';
+
+                    // Optional: Clear the form fields after submission
+                    document.getElementById('foodTesterForm').reset();
+                } else {
+                    alert("Please fill in all fields!");
+                }
+            }
+        </script>
+    </body>
+</html>
